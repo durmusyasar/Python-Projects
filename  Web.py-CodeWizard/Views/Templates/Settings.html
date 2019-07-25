@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row">
+        <ul class="sidebar">
+            <li><a href="/"><span class="mdi mdi-home"></span>Home Feed</a></li>
+            <li><a href="/profile/$session['user']['username']"><span class="mdi mdi-account-circle"></span>Profile</a></li>
+            <li><a href="#"><span class="mdi mdi-email"></span>Messages</a></li>
+            <li><a href="#"><span class="mdi mdi-google-circles-group"></span>Friends</a></li>
+            <li><a href="#"><span class="mdi mdi-google-circles-communities"></span>Communities</a></li>
+            <li><a href="#"><span class="mdi mdi-bell"></span>Notifications</a></li>
+            <li class="seperator"></li>
+            <li><a href="#"><span class="mdi mdi-settings"></span>Settings</a></li>
+            <li><a href="#"><span class="mdi mdi-help-circle"></span>Help</a></li>
+        </ul>
+        <div class="col-md-12">
+        <div class="profile-header">
+            <div class="background-image" style="background: url($session['user']['background']);">
+                <div class="avatar">
+                    <img src="$session['user']['avatar']" class="profile-avatar">
+                    <h2 class="profile-name">$session['user']['name']</h2>
+                    <span class="profile-headline">Lv.10 Programmer</span>
+                </div>
+            </div>
+            <div class="profile-nav">
+                <ul class="nav navbar-nav navbar-center">
+                    <li><a href="/profile/$session['user']['username']">Activity</a></li>
+                    <li><a href="/profile/$session['user']['username']/info">İnfo</a></li>
+                    <li><a href="/profile/$session['user']['username']/code">code</a></li>
+                    <li><a href="/profile/$session['user']['username']/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="grid">
+                <div class="grid-sizer"></div>
+                <div class="post-card extra-padding">
+                    <form id="settings-form">
+                        <h2 class="post-title">Basic Info</h2>
+                        <span class="post-subtitle">Name</span>
+                        <p><input name="name" class="form-control no-border" value="$session['user']['name']"></p>
+                        <span class="post-subtitle">About</span>
+                        <p><textarea name="about" class="form-control no-border">$session['user']['about']</textarea></p>
+                        <span class="post-subtitle">Hobies</span>
+                        <p><input name="hobies" class="form-control no-border" value="$session['user']['hobies']"></p>
+                        <button type="submit" class="btn btn-info btn-raised waves-effect">Save</button>
+                    </form>
+                </div>
+                <div class="post-card extra-padding">
+                    <h2 class="post-title">Professional</h2>
+                    <span class="post-subtitle">Pointy Bracket <i>2012 - 2016</i></span>
+                    <p>I write awesome code for a living</p>
+                    <span class="post-subtitle"> Udemy <i>2015 - 2016</i></span>
+                    <p>I teach people how to do things for a living</p>
+                </div>
+                <div class="post-card extra-padding">
+                        <h2 class="post-title">Images</h2>
+                        <span class="post-subtitle">Avatar</span>
+                        <form id="avatar-upload" method="POST" enctype="multipart/form-data" action="/upload-image/avatar">
+                            <input type="file" name="avatar" class=""/>
+                            <button type="submit" class="btn btn-info btn-raised waves-effect">Save</button>
+                        </form>
+                        <span class="post-subtitle">Background Image</span>
+                        <form id="background-upload" method="POST" enctype="multipart/form-data" action="/upload-image/background">
+                            <input type="file" name="avatar" class=""/>
+                            <button type="submit" class="btn btn-info btn-raised waves-effect">Save</button>
+                        </form>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+    
+    
